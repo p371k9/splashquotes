@@ -32,8 +32,6 @@ class QuotesSpider(scrapy.Spider):
             self.logger.debug(hh[0])
             u = response.urljoin(hh[0])
             self.logger.debug('*****next url********: ' + u)                    
-            # end copy
-            #yield response.follow(url=u, callback=self.parse) 
             
             yield SplashRequest(response.urljoin(u), self.parse, 
                 endpoint='render.html', 
